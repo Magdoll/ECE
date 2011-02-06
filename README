@@ -1,0 +1,43 @@
++============================================+
++ Finding ECEs in .wigFix phyloP files
++============================================+
+
+Usage:
+	python ECE_finding_phyloP.py -f <filename> [-p <phyloP>] [-m <min_ece_length>] [-o <output_filename>]
+
+Only the input filename (should be wigFix format) is absolutely required.
+Type:
+
+	python ECE_finding_phyloP.py --help
+
+to see the param defaults and usage.
+
+
++=================================+
++ Additional note
++=================================+
+
+The core ECE algorithm is implemented in a pure Python version (findECE_pure.py)
+and a Cython version (findECE.pyx). The latter reduces the run time by 50%.
+
+In most cases the Cython module (findECE.so) should be directly usable.
+In that case nothing needs to be done for setting up the scripts.
+
+To test that the Cython version works, invoke the python interpreter and type:
+>>> import findECE
+>>> findECE.test()
+
+However if it looks like it needs to be recompiled, do:
+
+	make clean
+
+To first remove the .c and .so files. Then type:
+
+	make
+
+
+The main ECE script (ECE_finding_phyloP.py) will try to use the Cython version
+whenever possible. When it fails, it falls back to pure python version.
+
+
+
