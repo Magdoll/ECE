@@ -1,0 +1,64 @@
+===============================================================
+ Finding Extremely Conserved Elements
+===============================================================
+
+This is a description of how to run the Python script ECE_finding.py
+for finding Extremely Conserved Elements (ECE) in the UCSC 44-way
+MULTIZ blocks.
+
+The current script is configured to find ECEs that are:
+	+ at least 40 species
+	+ at least 100 bp
+	+ at least 80% conserved columns
+
+
+PREREQUISITES
+=============
+
+To run the script, you must have:
+
+1) Python__ 2.5 or newer (the code was written with Python 2.6)
+
+2) Numpy 
+
+  only the numpy array is used here, and that can be 
+  replaced by standard Python lists. Look for the two
+  lines in the code that declares the numpy arrays:
+
+		`np.zeros`
+
+  and change them accordingly.
+
+
+SETTING AND RUNNING THE SCRIPT
+==============================
+
+In the directory where the Python script is to be run in, 
+create two directories: data/ and results/
+
+Download the MULTIZ blocks from:
+
+	ftp://hgdownload.cse.ucsc.edu/goldenPath/hg18/multiz44way/maf/
+
+to the directory data/. You don't have to unzip them if they're gzipped.
+
+
+Run the Python script by typing the command format:
+
+	python ECE_finding.py <maf_filename>
+
+The script will read the file data/<maf_filename> and store the ECE
+output in the results/ directory. The most important output will be
+results/<maf_filename>_ece.txt as this lists the ECEs.
+
+
+For example, if you run:
+
+	python ECE_finding.py chr6.maf.gz
+
+Then after it's done you should see in a file results/chr6.maf.gz_ece.txt 
+that contains the ECE alignments.
+
+
+Contact Elizabeth Tseng (lachesis@cs.washington.edu) for questions.
+
