@@ -24,8 +24,11 @@ def read_phyloP_n_run(filename, phylop_threshold, min_ece_length, outf):
 
 	For each block that pass through the filter, run it through ECE.
 	"""
-	outf.write("Processing {0} with phyloP score cutoff {1} and minimum ECE length {2}\n".format(\
+#	outf.write("Processing {0} with phyloP score cutoff {1} and minimum ECE length {2}\n".format(\
+#			filename, phylop_threshold, min_ece_length))
+	outf.write("#INPUT: {0}\n#phyloP CUTOFF: {1}\n#MIN ECE LENGTH: {2}\n".format(\
 			filename, phylop_threshold, min_ece_length))
+	outf.write("CHR\tSTART\tEND\tLENGTH\n")
 
 	s = None
 

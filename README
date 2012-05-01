@@ -6,12 +6,17 @@ Usage:
 	python ECE_finding_phyloP.py -f <filename> [-p <phyloP>] [-m <min_ece_length>] [-o <output_filename>]
 
 Only the input filename (should be wigFix format) is absolutely required.
+
 Type:
 
 	python ECE_finding_phyloP.py --help
 
 to see the param defaults and usage.
 
+An example usage is:
+    python ECE_finding_phyloP.py -f example.wigFix -m 50 -p 3.1 -o example.ece.txt
+
+ which finds ECEs with length >= 50 and avg. phyloP score >= 3.1 
 
 +=================================+
 + Additional note
