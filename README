@@ -35,9 +35,6 @@ To test that the Cython version works, invoke the python interpreter and type:
 However if it looks like it needs to be recompiled, do:
 
 	make clean
-
-To first remove the .c and .so files. Then type:
-
 	make
 
 
